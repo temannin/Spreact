@@ -16,3 +16,5 @@ The folling programs need to be available on the ENV PATH.
 3. Run `python spreact.py`
 4. Fill out Project Details
 5. Done!
+
+**Note: When installing the ReactJS app, we add a `proxy: {"http://localhost:8080"}` property to the project's `package.json` file so that any requests not mapped to `/` are redirect to the Java API. This avoids CORS related issues amongst other things.**
