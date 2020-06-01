@@ -12,7 +12,7 @@ The folling programs need to be available on the ENV PATH.
 ## Steps to Generate Project
 
 1. Clone repo
-2. Run `pip install requirements.txt`
+2. Run `pip install -r requirements.txt`
 3. Run `python spreact.py`
 4. Fill out Project Details
 5. Done!
