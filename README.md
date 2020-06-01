@@ -8,11 +8,7 @@ The folling programs need to be available on the ENV PATH.
 
 - yarn
 - npm >= 5.2.0
-
-  _Depending on your dependency manager_
-
-- Gradle
-- Maven
+- Gradle or Maven (depending on your build automation tool)
 
 ## Steps to Generate Project
 
