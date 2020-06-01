@@ -21,10 +21,8 @@ def getSelectionResult(list, title, subtitle=None):
 class Project():
 
     name_of_project = input("Name of Project: ")
-
     artifact_input = input("Artifact group (ex: com.example): ")
     artifact_group = "com.example" if artifact_input == "" else artifact_input
-
     description = input("Description: ")
     dependency_system = getSelectionResult(
         java_depedency_systems, "Select Java Dependency Manager: ")
@@ -66,8 +64,18 @@ class Project():
             zip_ref.extractall(directory_path)
 
         os.remove(zip_file_path)
+        os.chdir(directory_path)
+        os.chdir(self.name_of_project)
+
+        if (self.dependency_system.lower() == "maven"):
+            subprocess.call(["mvn", "clean", "install"], shell=True)
+        elif (self.dependency_system.lower() == "gradle"):
+            pass
 
     def generateReactProject(self):
+        os.chdir("..")
+        os.chdir("..")
+
         if (self.use_typescript):
             subprocess.call(["npx", "create-react-app",
                              self.name_of_project.lower(), "--template", "typescript"], shell=True)
@@ -75,6 +83,8 @@ class Project():
             subprocess.call(["npx", "create-react-app",
                              self.name_of_project.lower()], shell=True)
         os.chdir(self.name_of_project.lower())
+
+        subprocess.call(["yarn", "add", "concurrently"], shell=True)
         with open("package.json", "r+") as jsonFile:
             data = json.load(jsonFile)
             data["proxy"] = "http://localhost:8080"
