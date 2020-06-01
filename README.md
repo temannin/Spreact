@@ -1,6 +1,6 @@
 # Spreact
 
-Easy to use scipt-utility for creating a Spring Backend + ReactJS Frontend Application
+Easy to use scipt-utility for creating a Spring Boot Backend + ReactJS Frontend Application
 
 ## Steps to Generate Project
 
