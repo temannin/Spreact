@@ -64,7 +64,8 @@ class Project():
         with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
             os.mkdir(directory_path)
             zip_ref.extractall(directory_path)
-            os.remove(zip_file_path)
+
+        os.remove(zip_file_path)
 
     def generateReactProject(self):
         if (self.use_typescript):
